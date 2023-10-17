@@ -19,6 +19,9 @@ function App() {
       <Editor
         editorState={editorState}
         onEditorStateChange={setEditorState}
+        wrapperClassName="wrapper-class"
+        editorClassName="editor-class"
+        toolbarClassName="toolbar-class"
       />
     </div>
   )
