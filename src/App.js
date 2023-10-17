@@ -10,14 +10,20 @@ import './App.css';
 function App() {
   const [editorState, setEditorState] = useState(
     () => EditorState.createEmpty(),
-  );
-  const [convertedContent, setConvertedContent] = useState(null);
+  ); // стейт для текста редактора rtf
+
+  const [convertedContent, setConvertedContent] = useState(null); //стей для конверированного текста html
 
   useEffect(() => {
     let html = convertToHTML(editorState.getCurrentContent());
     setConvertedContent(html);
   }, [editorState]);
 
+  /**
+   *Фенкция для безопасной вставки html текста
+   * @param {*} html
+   * @returns объект с одним полем __html
+   */
   function createMarkup(html) {
     return {
       __html: DOMPurify.sanitize(html)
@@ -35,6 +41,25 @@ function App() {
         wrapperClassName="wrapper-class"
         editorClassName="editor-class"
         toolbarClassName="toolbar-class"
+        // toolbar={{
+        //   inline: { inDropdown: true },
+        //   list: { inDropdown: true },
+        //   textAlign: { inDropdown: true },
+        //   link: { inDropdown: true },
+        //   history: { inDropdown: true },
+        // }}
+        hashtag={{
+          separator: ' ',
+          trigger: '#',
+        }}
+        mention={{
+          separator: ' ',
+          trigger: '@',
+          suggestions: [
+            { text: 'JavaScript', value: 'javascript', url: 'js' },
+            { text: 'Golang', value: 'golang', url: 'go' },
+          ],
+        }}
       />
       <div
         className="preview"
