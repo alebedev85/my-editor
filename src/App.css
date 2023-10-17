@@ -26,15 +26,35 @@
 .wrapper-class {
   padding: 1rem;
   border: 1px solid #ccc;
-  max-width: 60%;
+  max-width: 1000px;
   height: 500px;
+  display: flex;
+  flex-direction: column;
 }
 .editor-class {
   background-color:lightgray;
   padding: 1rem;
+  box-sizing: border-box;
   border: 1px solid #ccc;
+  height: 83%;
 }
 .toolbar-class {
   border: 1px solid #ccc;
+}
+.preview {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  padding: 1rem;
+  margin-top: 1rem;
+  width: 1033px;
+  background-color:rgba(31, 31, 31, 0.417);
+  text-align: left;
+}
+
+@media screen and (max-width: 1033px) {
+  .preview{
+    width: 100%;
+  }
 }
 
