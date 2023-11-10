@@ -1,0 +1,36 @@
+.sidebar {
+  grid-area: sidebar;
+  display: flex;
+  flex-direction: column;
+  border-right: 2px solid #282c34;
+  box-sizing: border-box;
+  resize:horizontal;
+  overflow: auto;
+  min-width: 300px;
+}
+
+.sidebar__title {
+  margin: 0;
+  padding: 25px 0;
+  text-align: center;
+  color: white;
+  border-bottom: 2px solid #282c34;
+  background-color: #525b6b;
+}
+
+.sidebar__notsList {
+  background-color: #8895b1;
+  height: 100%;
+}
+
+.sidebar__note {
+  padding: 25px 0;
+  background-color: white;
+  border: 1px solid #282c34;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 25px;
+  letter-spacing: 0.2px;
+  text-align: center;
+  width: 100%;
+}

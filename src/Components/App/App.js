@@ -4,6 +4,8 @@ import { Editor } from 'react-draft-wysiwyg';
 import { convertToHTML } from 'draft-convert';
 import DOMPurify from 'dompurify';
 
+import Sidebar from '../Sidebar/Sidebar';
+
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import './App.css';
 
@@ -32,9 +34,10 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
+      <header className="header">
         Rich Text Editor Example
       </header>
+      <Sidebar/>
       <Editor
         editorState={editorState}
         onEditorStateChange={setEditorState}
@@ -61,10 +64,13 @@ function App() {
           ],
         }}
       />
-      <div
+      {/* <div
         className="preview"
         dangerouslySetInnerHTML={createMarkup(convertedContent)}>
-      </div>
+      </div> */}
+      <footer className="footer">
+        Rich Text Editor Example
+      </footer>
     </div>
   )
 }
